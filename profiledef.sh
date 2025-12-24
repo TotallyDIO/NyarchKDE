@@ -35,5 +35,7 @@ file_permissions=(
   ["/usr/local/bin/nyaura"]="0:0:755"
 #  ["/usr/local/bin/nyay"]="0:0:755"
 ["/etc/calamares/"]="0:0:755"
-["/usr/bin/calamares"]="0:0:755"
+# Disabled Calamares explicit permission fix; causes "Outside of valid path" when
+# mkarchiso/libarchive resolves symlinks that point outside the airootfs.
+# ["/usr/bin/calamares"]="0:0:755"
 )
