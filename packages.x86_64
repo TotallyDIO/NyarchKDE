@@ -369,8 +369,11 @@ yaml-cpp
 # Display Manager
 sddm
 sddm-kcm
-
 kpmcore
 qt6-svg
 qt6-declarative
 polkit-kde-agent
+xcb-util-cursor
+xcb-util
+qt6
+xorg

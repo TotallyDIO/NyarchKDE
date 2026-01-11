@@ -257,7 +257,7 @@ sed -i "s/en_US/"${LCLST}"/g" ./ezreleng/airootfs/etc/locale.conf
 
 # Start mkarchiso
 runmkarchiso () {
-mkarchiso -v -w ./work -o ./out ./ezreleng
+mkarchiso -v -w ./work -o "/home/a/Desktop/ISO's/KDE stuff" ./ezreleng
 }
 
 # After the build tree is copied into ./ezreleng/airootfs, enable SDDM

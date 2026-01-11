@@ -26,16 +26,8 @@ file_permissions=(
   ["/usr/local/bin/ezmaint"]="0:0:755"
   ["/usr/share/ezarcher/Scripts/"]="0:0:755"
   ["/usr/local/bin/grubinstall.sh"]="0:0:755"
-#  ["/var/lib/flatpak"]="0:0:755"
-#  ["/var/lib/flatpak/"]="0:0:755"
-#  ["/var/lib/flatpak/app"]="0:0:755"
-#  ["/var/lib/flatpak/runtime"]="0:0:755"
   ["/usr/local/bin/nekofetch"]="0:0:755"
   ["/usr/local/bin/nyaofetch"]="0:0:755"
   ["/usr/local/bin/nyaura"]="0:0:755"
-#  ["/usr/local/bin/nyay"]="0:0:755"
-["/etc/calamares/"]="0:0:755"
-# Disabled Calamares explicit permission fix; causes "Outside of valid path" when
-# mkarchiso/libarchive resolves symlinks that point outside the airootfs.
-# ["/usr/bin/calamares"]="0:0:755"
+  ["/etc/calamares/"]="0:0:755"
 )
