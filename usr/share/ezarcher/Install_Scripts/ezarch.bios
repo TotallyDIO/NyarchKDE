@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # EZ Arch Installer - BIOS
-# Revision: 25.07.20 -- by eznix (https://sourceforge.net/projects/ezarch/)
+# Revision: 25.12.24 -- by eznix (https://sourceforge.net/projects/ezarch/)
 # (GNU/General Public License version 3.0)
 
 # ----------------------------------------
@@ -35,7 +35,7 @@ welcome () {
   echo "=     Welcome to the Ezarch Installer Script      ="
   echo "=                                                 ="
   echo "=     BIOS Edition                                ="
-  echo "=     Revision: 25.07.20                          ="
+  echo "=     Revision: 25.12.24                          ="
   echo "=                                                 ="
   echo "=     Brought to you by eznix                     ="
   echo "=     https://sourceforge.net/projects/ezarch/    ="
@@ -340,7 +340,7 @@ instgrub () {
 
 instxorg () {
   clear
-  pacstrap /mnt mesa xclip xf86-input-evdev xf86-input-libinput xf86-input-synaptics xf86-input-vmmouse xf86-input-void xf86-video-amdgpu xf86-video-ati xf86-video-dummy xf86-video-fbdev xf86-video-nouveau xf86-video-qxl xf86-video-vesa xorg-apps xorg-font-util xorg-fonts-75dpi xorg-fonts-100dpi xorg-fonts-encodings xorg-server xorg-server-common xorg-xinit xorg-xwayland xterm
+  pacstrap /mnt mesa xclip xf86-input-evdev xf86-input-libinput xf86-input-synaptics xf86-input-vmmouse xf86-input-void xf86-video-amdgpu xf86-video-ati xf86-video-dummy xf86-video-fbdev xf86-video-nouveau xf86-video-qxl xf86-video-vesa xorg-apps xorg-font-util xorg-fonts-75dpi xorg-fonts-100dpi xorg-fonts-encodings xorg-server xorg-server-common xorg-xhost xorg-xinit xorg-xwayland xterm
   clear
   echo -e "\n"
   echo "Xorg installed installed..."
@@ -365,7 +365,7 @@ instgen () {
 
 instmedia () {
   clear
-  pacstrap /mnt alsa-card-profiles alsa-lib alsa-plugins alsa-firmware alsa-utils audacious audacious-plugins cdrdao dvdauthor faac faad2 ffmpeg ffmpegthumbnailer flac frei0r-plugins gstreamer gst-libav gst-plugins-base gst-plugins-good gst-plugins-bad gst-plugin-pipewire gst-plugins-ugly gstreamer-vaapi imagemagick lame libdvdcss libopenraw mencoder mjpegtools pipewire pipewire-alsa pipewire-audio pipewire-docs pipewire-jack pipewire-pulse pipewire-v4l2 poppler-glib sox wireplumber x265 x264 xvidcore
+  pacstrap /mnt alsa-card-profiles alsa-lib alsa-plugins alsa-firmware alsa-utils audacious audacious-plugins cdrdao dvdauthor faac faad2 ffmpeg ffmpegthumbnailer flac frei0r-plugins gstreamer gst-libav gst-plugins-base gst-plugins-good gst-plugins-bad gst-plugin-pipewire gst-plugins-ugly gstreamer-vaapi imagemagick lame libdvdcss libopenraw mencoder mjpegtools pipewire pipewire-alsa pipewire-audio pipewire-docs pipewire-jack pipewire-pulse pipewire-v4l2 poppler-glib sox wireplumber x265 x264 xvidcore yt-dlp yt-dlp-ejs
   clear
   echo -e "\n"
   echo "Multimedia packages installed..."

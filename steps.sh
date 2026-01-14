@@ -285,6 +285,7 @@ enable_sddm_postpopulate () {
   ln -sf "$SDDM_UNIT" ./ezreleng/airootfs/etc/systemd/system/graphical.target.wants/sddm.service
 }
 
+
 # ----------------------------------------
 # Run Functions
 # ----------------------------------------
