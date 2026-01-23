@@ -1,0 +1,17 @@
+2026-01-23 10:10:41.542 [I] main: main: ###### STARTED NEW SESSION v2.0.0 ######
+2026-01-23 10:10:41.542 [D] main: main: Installed in /usr/lib/python3.14/site-packages/kde_material_you_colors
+2026-01-23 10:10:41.542 [D] config: get_conf: No configuration file was found
+2026-01-23 10:10:41.543 [D] main: main: {'light': None, 'file': None, 'monitor': 0, 'ncolor': 0, 'iconslight': None, 'iconsdark': None, 'pywal': None, 'pywal_light': None, 'light_blend_multiplier': 1, 'dark_blend_multiplier': 1, 'on_change_hook': None, 'sierra_breeze_buttons_color': None, 'disable_konsole': False, 'titlebar_opacity': 100, 'titlebar_opacity_dark': 100, 'toolbar_opacity': 100, 'toolbar_opacity_dark': 100, 'konsole_opacity': 100, 'konsole_opacity_dark': 100, 'konsole_blur': False, 'color': None, 'klassy_windeco_outline': None, 'titlebar_opacity_override': None, 'custom_colors_list': None, 'darker_window_list': None, 'use_startup_delay': None, 'startup_delay': 0, 'plasma_follows_scheme': None, 'pywal_follows_scheme': None, 'main_loop_delay': 1, 'screenshot_delay': 900, 'once_after_change': False, 'pause_mode': False, 'screenshot_only_mode': False, 'scheme_variant': 5, 'chroma_multiplier': 1, 'tone_multiplier': 1, 'qdbus_executable': None, 'manual_fetch': False, 'fetch_colors': False}
+2026-01-23 10:10:41.563 [I] plasma_utils: get_initial_mode: Using theme from stored name
+2026-01-23 10:10:41.563 [I] main: main: Wallpaper: org.kde.image (image): /usr/share/backgrounds/default.jpg
+2026-01-23 10:10:41.940 [I] m3_scheme_utils: get_color_schemes: Best colors: #e4871c #994816 #efa920 #f2e7cd #bb3833 #8c9194 #f1f6f7
+2026-01-23 10:10:41.940 [I] m3_scheme_utils: get_color_schemes: Using seed: #e4871c
+2026-01-23 10:10:42.301 [I] plasma_utils: apply_color_schemes: Lo schema dei colori MaterialYouDark è stato applicato correttamente alla tua sessione attuale di Plasma
+2026-01-23 10:10:42.302 [D] plasma_utils: set_icons: No icon theme specified.
+2026-01-23 10:10:42.303 [D] konsole_utils: set_default_profile: [Desktop Entry] not found, adding with profile 'Profile 1'
+2026-01-23 10:10:42.303 [I] konsole_utils: create_profile: Konsole profile 'Profile 1' doesn't exist, creating it
+2026-01-23 10:10:42.305 [D] konsole_utils: reload_profile: Konsole services (windows) running: 1
+2026-01-23 10:10:42.307 [D] konsole_utils: reload_profile: window: org.kde.konsole-1495 sessions: 1
+2026-01-23 10:11:02.415 [I] utils: copy_user_files: Copying /home/weeb/.config/autostart/kde-material-you-colors.desktop
+2026-01-23 10:11:02.416 [D] utils: update_desktop_entry: Updating Exec /home/weeb/.config/autostart/kde-material-you-colors.desktop
+2026-01-23 10:11:02.416 [D] utils: update_desktop_entry: Creating link /usr/bin/kde-material-you-colors -> /home/weeb/.local/bin/kde-material-you-colors
