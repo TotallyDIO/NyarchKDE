@@ -365,7 +365,12 @@ plasma-nm
 plasma-pa
 # plasma-wayland-session
 kde-applications-meta
+xdg-desktop-portal-gtk
 yaml-cpp
+python-materialyoucolor
+python-pywal16
+kde-material-you-colors
+yay-bin
 
 # Display Manager
 sddm
