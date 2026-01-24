@@ -27,4 +27,7 @@ file_permissions=(
   ["/usr/local/bin/grubinstall.sh"]="0:0:755"
   ["/usr/local/bin/ezarch.bios"]="0:0:755"
   ["/usr/local/bin/ezarch.uefi"]="0:0:755"
+  ["/usr/local/bin/nekofetch"]="0:0:755"
+  ["/usr/local/bin/nyaofetch"]="0:0:755"
+  ["/usr/local/bin/nyay"]="0:0:755"
 )
