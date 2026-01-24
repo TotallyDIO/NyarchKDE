@@ -318,12 +318,12 @@ ckbcomp
 flatpak
 
 # Closed Source nvidia drivers
-nvidia-dkms
-nvidia-utils
-lib32-nvidia-utils
-nvidia-settings
-vulkan-icd-loader
-lib32-vulkan-icd-loader
+#nvidia-dkms
+#nvidia-utils
+#lib32-nvidia-utils
+#nvidia-settings
+#vulkan-icd-loader
+#lib32-vulkan-icd-loader
 
 # Nyarch
 fastfetch
@@ -363,14 +363,83 @@ komikku
 plasma-desktop
 plasma-nm
 plasma-pa
+kscreen
+bluedevil
+glib2
+packagekit-qt6
+ibus
 # plasma-wayland-session
-kde-applications-meta
+discover
+
+#kde-applications-meta
+kde-accessibility-meta
+# Media
+gwenview
+kcolorchooser
+kdegraphics-thumbnailers
+koko
+okular
+svgpart
+# Multimedia 
+audiotube
+dragon
+elisa
+ffmpegthumbs
+kamoso
+kmix
+plasmatube
+# Networking
+kdeconnect
+kdenetwork-filesharing
+ktorrent
+# pim 
+merkuro
+kaddressbook
+# sdk 
+dolphin-plugins
+# system 
+dolphin
+kcron
+kde-inotify-survey
+kjournald
+ksystemlog
+partitionmanager
+# Utilities 
+ark
+filelight
+francis
+isoimagewriter
+kalk
+kate
+kcharselect
+kclock
+kdialog
+kfind
+kgpg
+konsole
+krecorder
+kwalletmanager
+kweather
+# Extra 
+filelight
+plasma-systemmonitor
+
+
 xdg-desktop-portal-gtk
 yaml-cpp
 python-materialyoucolor
 python-pywal16
 kde-material-you-colors
 yay-bin
+
+python-edge-tts
+python-gtts
+python-livepng
+python-hatch-fancy-pypi-readme
+python-newspaper4k
+python-pylatexenc
+python-mcp
+nyarchassistant
 
 # Display Manager
 sddm
