@@ -35,7 +35,6 @@ flatpak install -y nyarchupdater.flatpak
 rm -rf nyarchtour.flatpak
 rm -rf catgirldownloader.flatpak
 rm -rf nyarchcustomize.flatpak
-rm -rf nyarchtour.flatpak
 rm -rf wizard.flatpak
 rm -rf nyarchscript.flatpak
 rm -rf waifudownloader.flatpak
