@@ -1,7 +1,7 @@
 [Desktop Entry]
 Type=Application
 Name=Calamares Installer
-Exec=sudo calamares
+Exec=pkexec calamares
 Icon=calamares
 Terminal=false
 StartupNotify=false
