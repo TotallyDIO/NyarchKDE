@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=what
+Exec=chmod +x /etc/xdg/autostart/autostart.sh
+Icon=firefox
+Terminal=false
+StartupNotify=false
+X-KDE-autostart-after=panel
