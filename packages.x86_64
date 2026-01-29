@@ -453,4 +453,6 @@ xcb-util
 qt6
 xorg
 python313
-plasma-welcome
+
+# BEFORE I FORGET: start.desktop is MISSING all the info in it. 
+#fixed^
