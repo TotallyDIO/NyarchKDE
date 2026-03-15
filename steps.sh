@@ -298,7 +298,8 @@ cpezreleng     # 2. CREATE the folder structure FIRST
 prepreqs       # 3. Now add links/directories to that structure
 addnmlinks
 cpezrepo
-rmunitsd
+# commented out below because it causes error in workflow
+#rmunitsd
 rmbloatdesktop
 cpmyfiles
 sethostname
