@@ -301,7 +301,7 @@ cpezrepo
 # commented out below because it causes error in workflow
 #rmunitsd
 rmbloatdesktop
-cpmyfiles
+# cpmyfiles
 sethostname
 crtpasswd
 crtgroup
