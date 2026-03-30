@@ -442,6 +442,7 @@ python-newspaper
 python-pylatexenc
 python-mcp
 python-pysilero-vad
+llama.cpp-bin
 nyarchassistant
 nyarchtourqt
 nyarchwizardqt
@@ -450,6 +451,7 @@ catgirldownloaderqt
 nyarchupdaterqt
 nekoplay
 
+plasma-welcome
 # Display Manager
 sddm
 sddm-kcm
