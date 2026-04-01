@@ -6,8 +6,6 @@ systemctl enable grub-btrfsd
 # Fix calamares policy
 rm -rf /usr/share/polkit-1/actions/com.github.calamares.calamares.policy
 mv /usr/share/polkit-1/actions/com.github.calamares.calamares.polic /usr/share/polkit-1/actions/com.github.calamares.calamares.policy
-sudo pacman -Syy
-pacman-key --init
 # Install Flatpaks
 flatpak mask "org.freedesktop.Platform.GL.nvidia*"
 flatpak install -y org.gtk.Gtk3theme.adw-gtk3 org.gtk.Gtk3theme.adw-gtk3-dark
@@ -17,5 +15,3 @@ flatpak --remove mask "org.freedesktop.Platform.GL.nvidia*"
 wget https://nyarchlinux.moe/NyarchCopyKDE.tar.gz && tar -xvf NyarchCopyKDE.tar.gz && cd NyarchCopyKDE && bash ./apply_airoot.sh && rm -rf NyarchCopy*
 
 chmod +x /etc/xdg/autostart/autostart.sh
-
-
