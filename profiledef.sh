@@ -2,7 +2,7 @@
 # shellcheck disable=SC2034
 
 iso_name="nyarch-kde"
-iso_label="NYARCH-KDE_$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%y%m%d)"
+iso_label="NYARCH-NVIDIA-KDE_$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%y%m%d)"
 iso_publisher="Nyarch Linux <https://nyarchlinux.moe>"
 iso_application="NyarchLinux DVD"
 iso_version="$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%y%m%d)"

@@ -452,6 +452,14 @@ catgirldownloaderqt
 nyarchupdaterqt
 nekoplay
 
+# Closed Source nvidia drivers
+nvidia-open
+nvidia-utils
+lib32-nvidia-utils
+# Install nvidia-settings and envycontrol from chaotic 
+nvidia-settings
+envycontrol
+
 # Nyarch Repo 
 nyarch-mirrorlist
 nyarch-keyring
