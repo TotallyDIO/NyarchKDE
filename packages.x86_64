@@ -424,7 +424,7 @@ spectacle
 # Extra 
 filelight
 plasma-systemmonitor
-
+btop
 
 xdg-desktop-portal-gtk
 yaml-cpp
