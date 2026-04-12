@@ -162,7 +162,7 @@ cp -r usr/ ./ezreleng/airootfs/
 mkdir -p ./ezreleng/airootfs/etc/skel
 mkdir -p ./ezreleng/airootfs/var/lib/
 #cp -r /var/lib/flatpak/ ./ezreleng/airootfs/var/lib/flatpak
-ln -sf /usr/share/nyarcher ./ezreleng/airootfs/etc/skel/nyarcher
+ln -sf /usr/share/ezarcher ./ezreleng/airootfs/etc/skel/ezarcher
 cp customize_airootfs.sh ./ezreleng/airootfs/root/customize_airootfs.sh
 }
 
@@ -258,7 +258,7 @@ sed -i "s/en_US/"${LCLST}"/g" ./ezreleng/airootfs/etc/locale.conf
 
 # Start mkarchiso
 runmkarchiso () {
-mkarchiso -v -w ./work -o ./out ./ezreleng
+mkarchiso -v -w ./work -o "/home/a/Desktop/ISO's/KDE stuff" ./ezreleng
 }
 
 # After the build tree is copied into ./ezreleng/airootfs, enable SDDM
