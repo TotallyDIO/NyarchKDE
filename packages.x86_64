@@ -1,6 +1,5 @@
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
-archlinux-keyring
 alsa-utils
 amd-ucode
 arch-install-scripts
@@ -160,6 +159,7 @@ gst-plugins-base
 gst-plugins-good
 gst-plugins-bad
 gst-plugins-ugly
+gstreamer-vaapi
 imagemagick
 lame
 libdvdcss
@@ -318,16 +318,16 @@ ckbcomp
 flatpak
 
 # Closed Source nvidia drivers
-#nvidia-dkms
-#nvidia-utils
-#lib32-nvidia-utils
-#nvidia-settings
-#vulkan-icd-loader
-#lib32-vulkan-icd-loader
+nvidia-dkms
+nvidia-utils
+lib32-nvidia-utils
+nvidia-settings
+vulkan-icd-loader
+lib32-vulkan-icd-loader
 
 # Nyarch
-nyancat
 fastfetch
+fragments
 lollypop
 python-pywal
 nodejs
@@ -363,107 +363,20 @@ komikku
 plasma-desktop
 plasma-nm
 plasma-pa
-kscreen
-bluedevil
-glib2
-#packagekit-qt6 - Not stable
-ibus
 # plasma-wayland-session
-discover
-
-#kde-applications-meta
-kde-accessibility-meta
-# Media
-gwenview
-kcolorchooser
-kdegraphics-thumbnailers
-koko
-okular
-svgpart
-# Multimedia 
-audiotube
-dragon
-elisa
-ffmpegthumbs
-kamoso
-kmix
-plasmatube
-# Networking
-kdeconnect
-kdenetwork-filesharing
-ktorrent
-# pim 
-merkuro
-kaddressbook
-# sdk 
-dolphin-plugins
-# system 
-dolphin
-kcron
-kde-inotify-survey
-kjournald
-ksystemlog
-partitionmanager
-# Utilities 
-ark
-filelight
-francis
-isoimagewriter
-kalk
-kate
-kcharselect
-kclock
-kdialog
-kfind
-kgpg
-konsole
-krecorder
-kwalletmanager
-kweather
-spectacle
-# Extra 
-filelight
-plasma-systemmonitor
-btop
-
+kde-applications-meta
 xdg-desktop-portal-gtk
 yaml-cpp
 python-materialyoucolor
 python-pywal16
 kde-material-you-colors
-adwaita-material-you
 yay-bin
 
-# Nyarch Apps
-python-edge-tts
-python-gtts
-python-livepng
-python-hatch-fancy-pypi-readme
-python-newspaper
-python-pylatexenc
-python-mcp
-python-pysilero-vad
-llama.cpp-bin
-nyarchassistant
-nyarchtourqt
-nyarchwizardqt
-nyarchscriptqt
-catgirldownloaderqt
-nyarchupdaterqt
-nekoplay
-
-# Nyarch Repo 
-nyarch-mirrorlist
-nyarch-keyring
-
-plasma-welcome
 # Display Manager
 sddm
 sddm-kcm
 kpmcore
 qt6-svg
-qt6-virtualkeyboard
-qt6-multimedia-ffmpeg
 qt6-declarative
 polkit-kde-agent
 xcb-util-cursor
@@ -471,6 +384,3 @@ xcb-util
 qt6
 xorg
 python313
-
-# BEFORE I FORGET: start.desktop is MISSING all the info in it. 
-#fixed^
