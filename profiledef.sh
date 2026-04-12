@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 # shellcheck disable=SC2034
 
-iso_name="ezarch-kde"
-iso_label="EZARCH-KDE_$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%y%m%d)"
-iso_publisher="Ezarcher Linux <https://sourceforge.net/projects/ezarch/>"
-iso_application="Ezarcher DVD"
+iso_name="nyarch-kde"
+iso_label="NYARCH-KDE_$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%y%m%d)"
+iso_publisher="Nyarch Linux <https://nyarchlinux.moe>"
+iso_application="NyarchLinux DVD"
 iso_version="$(date --date="@${SOURCE_DATE_EPOCH:-$(date +%s)}" +%y%m%d)"
 install_dir="arch"
 buildmodes=('iso')
@@ -27,4 +27,9 @@ file_permissions=(
   ["/usr/local/bin/grubinstall.sh"]="0:0:755"
   ["/usr/local/bin/ezarch.bios"]="0:0:755"
   ["/usr/local/bin/ezarch.uefi"]="0:0:755"
+  ["/usr/local/bin/nekofetch"]="0:0:755"
+  ["/usr/local/bin/nyaofetch"]="0:0:755"
+  ["/usr/local/bin/nyay"]="0:0:755"
+  ["/usr/share/nyarcher/Scripts/autostart.sh"]="0:0:755"
+  ["/usr/share/nyarcher/Scripts/cheange_wallpaper.sh"]="0:0:755"
 )
