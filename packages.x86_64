@@ -25,7 +25,6 @@ fsarchiver
 gpart
 gpm
 gptfdisk
-fdisk
 grml-zsh-config
 grub
 grub-btrfs
