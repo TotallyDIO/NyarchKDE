@@ -293,9 +293,9 @@ enable_sddm_postpopulate () {
 
 rootuser
 handlerror
-cleanup        # 1. Start by deleting old failed builds
-cpezreleng     # 2. CREATE the folder structure FIRST
-prepreqs       # 3. Now add links/directories to that structure
+cleanup  
+cpezreleng     
+prepreqs       
 addnmlinks
 cpezrepo
 rmunitsd
@@ -309,13 +309,9 @@ crtgshadow
 setkeylayout
 crtkeyboard
 crtlocalec
-# Enable SDDM now that cpmyfiles has copied /usr and unit files into the airootfs
 enable_sddm_postpopulate
 runmkarchiso
 rmezrepo
-
-# (enable_sddm_postpopulate is defined above and called before mkarchiso)
-
 
 
 # Disclaimer:
