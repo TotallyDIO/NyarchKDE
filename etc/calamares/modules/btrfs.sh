@@ -25,7 +25,7 @@ mount -o subvolid=5 "$ROOT_DEVICE" "$TOP_MOUNT"
 echo "Available subvolumes:"
 btrfs subvolume list "$TOP_MOUNT"
 
-# Example: detect @boot
+# Ex: detect @boot
 BOOT_SUBVOL=$(btrfs subvolume list "$TOP_MOUNT" | awk '{print $NF}' | grep '^@boot$')
 
 if [[ -n "$BOOT_SUBVOL" ]]; then
