@@ -8,7 +8,7 @@ set -euo pipefail
 ROOT_MOUNT="/mnt"
 
 log() {
-    echo "[btrfs-boot-symlink] $*"
+    echo "[btrfs] $*"
 }
 
 error() {
@@ -16,7 +16,7 @@ error() {
     exit 1
 }
 
-# 1. Verify we are in a valid install environment
+# 1. Verify if in valid place
 if ! mountpoint -q "$ROOT_MOUNT"; then
     log "No root mountpoint at $ROOT_MOUNT – skipping (not in install phase)"
     exit 0
@@ -29,14 +29,13 @@ if [[ "$FS_TYPE" != "btrfs" ]]; then
     exit 0
 fi
 
-# 3. Get the underlying Btrfs device
+# 3. Find the btrfs device
 DEVICE=$(findmnt -no SOURCE "$ROOT_MOUNT")
 if [[ -z "$DEVICE" ]]; then
     error "Could not determine Btrfs device for $ROOT_MOUNT"
 fi
 
-# 4. Dynamically read the subvolume name (volume name) from fstab
-#    Example line: UUID=... / btrfs subvol=@,compress=zstd:3 0 1
+# 4. find the subvolume name
 SUBVOL=$(grep -E '^\s*[^#].*\s+/\s+btrfs' "$ROOT_MOUNT/etc/fstab" 2>/dev/null \
          | grep -o 'subvol=[^,[:space:]]*' \
          | cut -d'=' -f2 \
@@ -50,7 +49,7 @@ fi
 log "Detected Btrfs device: $DEVICE"
 log "Detected root subvolume name (volume name): $SUBVOL"
 
-# 5. Prepare temporary mount for top-level subvolume (ID 5 is always the root of the filesystem)
+# 5. mount and make sym link
 TEMP_MOUNT="/tmp/btrfs_top_$$"
 mkdir -p "$TEMP_MOUNT"
 
@@ -66,7 +65,7 @@ else
     log "Created symbolic link: /boot → $SUBVOL/boot  (in top-level subvolume)"
 fi
 
-# 7. Clean up
+# 7. Cleaning up
 umount "$TEMP_MOUNT"
 rmdir "$TEMP_MOUNT"
 
