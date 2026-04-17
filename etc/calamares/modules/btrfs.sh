@@ -6,7 +6,7 @@ FSTYPE=$(findmnt -n -o FSTYPE /)
 
 echo "Root device: $ROOT_DEVICE"
 echo "Filesystem: $FSTYPE"
-
+# 67
 if [[ "$FSTYPE" != "btrfs" ]]; then
     echo "Not a btrfs system"
     exit 1
