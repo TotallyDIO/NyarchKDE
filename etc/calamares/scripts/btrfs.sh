@@ -35,14 +35,24 @@ if [[ -z "$DEVICE" ]]; then
     error "Could not determine Btrfs device for $ROOT_MOUNT"
 fi
 
-# 4. find the subvolume name
-SUBVOL=$(grep -E '^\s*[^#].*\s+/\s+btrfs' "$ROOT_MOUNT/etc/fstab" 2>/dev/null \
-         | grep -o 'subvol=[^,[:space:]]*' \
-         | cut -d'=' -f2 \
-         | head -n1 || echo "")
+# 4. find the subvolume name or id
+ROOT_FSTAB_ENTRY=$(grep -E '^\s*[^#].*\s+/\s+btrfs' "$ROOT_MOUNT/etc/fstab" 2>/dev/null | head -n1 || true)
+SUBVOL=$(printf '%s\n' "$ROOT_FSTAB_ENTRY" | grep -o 'subvol=[^,[:space:]]*' | cut -d'=' -f2 | head -n1 || echo "")
+SUBVOLID=$(printf '%s\n' "$ROOT_FSTAB_ENTRY" | grep -o 'subvolid=[^,[:space:]]*' | cut -d'=' -f2 | head -n1 || echo "")
+
+if [[ -z "$SUBVOL" && -n "$SUBVOLID" ]]; then
+    if [[ "$SUBVOLID" == "5" ]]; then
+        log "Root is top-level subvolume (subvolid=5) – no boot symlink needed"
+        exit 0
+    fi
+    SUBVOL=$(btrfs subvolume list -o "$ROOT_MOUNT" 2>/dev/null | awk -v id="$SUBVOLID" '$2==id {for (i=1; i<=NF; i++) if ($i == "path") {for (j=i+1; j<=NF; j++) printf "%s%s", $j, (j==NF?"":" "); print ""; exit}}')
+    if [[ -z "$SUBVOL" ]]; then
+        error "Could not resolve subvolume path for subvolid=$SUBVOLID"
+    fi
+fi
 
 if [[ -z "$SUBVOL" ]]; then
-    log "No subvol= option found in fstab – assuming plain Btrfs (no symlink needed)"
+    log "No subvol= or subvolid= option found in fstab – assuming plain Btrfs (no symlink needed)"
     exit 0
 fi
 
@@ -53,15 +63,34 @@ log "Detected root subvolume name (volume name): $SUBVOL"
 TEMP_MOUNT="/tmp/btrfs_top_$$"
 mkdir -p "$TEMP_MOUNT"
 
-if ! mount -o subvolid=5 "$DEVICE" "$TEMP_MOUNT"; then
+cleanup() {
+    if mountpoint -q "$TEMP_MOUNT" 2>/dev/null; then
+        umount "$TEMP_MOUNT" || true
+    fi
+    [[ -d "$TEMP_MOUNT" ]] && rmdir "$TEMP_MOUNT" || true
+}
+trap cleanup EXIT
+
+if ! mount -o ro,subvolid=5 "$DEVICE" "$TEMP_MOUNT"; then
     error "Failed to mount top-level Btrfs subvolume"
 fi
 
-# 6. Create the symbolic link for the boot directory (only if it doesn't already exist)
-if [[ -e "$TEMP_MOUNT/boot" ]]; then
-    log "boot entry already exists in top-level subvolume – skipping symlink creation"
+# 6. Create the symbolic link for the boot directory
+BOOT_PATH="$TEMP_MOUNT/boot"
+if [[ -L "$BOOT_PATH" ]]; then
+    CURRENT_TARGET=$(readlink "$BOOT_PATH")
+    if [[ "$CURRENT_TARGET" == "$SUBVOL/boot" ]]; then
+        log "Correct /boot symlink already exists in top-level subvolume"
+    else
+        log "Replacing existing /boot symlink in top-level subvolume"
+        rm "$BOOT_PATH"
+        ln -s "$SUBVOL/boot" "$BOOT_PATH"
+        log "Updated symbolic link: /boot → $SUBVOL/boot"
+    fi
+elif [[ -e "$BOOT_PATH" ]]; then
+    error "Top-level /boot exists and is not a symlink; cannot safely create the Btrfs boot symlink"
 else
-    ln -s "$SUBVOL/boot" "$TEMP_MOUNT/boot"
+    ln -s "$SUBVOL/boot" "$BOOT_PATH"
     log "Created symbolic link: /boot → $SUBVOL/boot  (in top-level subvolume)"
 fi
 
