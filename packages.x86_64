@@ -11,6 +11,7 @@ bind
 #brltty
 broadcom-wl-dkms
 btrfs-progs
+btrfs-assistant
 cryptsetup
 dhclient
 dhcpcd
